@@ -14,7 +14,6 @@ defmodule MoyoWeb.SessionController do
     if valid do
       conn
       |> Guardian.Plug.sign_in(user)
-      |> put_flash(:info, "Login!")
       |> redirect(to: "/")
     else
       render conn, "index.html"
