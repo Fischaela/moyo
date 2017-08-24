@@ -6,8 +6,7 @@
 
     <title>Hello Moyo!</title>
 
-    <%# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css" integrity="sha256-CDVQJfU+jJGU/oyDzvnzuGXbv0rz+SyBsPQwyn7x/jQ=" crossorigin="anonymous" /> %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -45,6 +44,8 @@
       <div class="containter">
 
         <div class="columns">
+          
+          <%= if logged_in?(@conn) do %>
           <div class="column is-one-quarter">
 
             <aside class="menu">
@@ -58,6 +59,8 @@
             </aside>
 
           </div>
+          <% end %>
+
           <div class="column">
 
             <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

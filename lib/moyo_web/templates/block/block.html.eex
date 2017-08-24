@@ -1,0 +1,70 @@
+<div class="column is-full">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title"><%= @block.title %>
+        <%= if @block.url do %>
+          <a href="<%= @block.url %>" class="icon">
+            <i class="fa fa-link is-size-6"></i>
+          </a>
+        <% end %>
+      </p>
+    </header>
+    <div class="card-content">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="http://placekitten.com/g/128/128"/>
+          </p>
+        </figure>
+
+        <div class="media-content">
+          
+          <div class="content">
+            <p>
+              <%= @block.description %>
+            </p>
+          </div>
+
+          <span class="is-size-7">24. August 2017, 20:40 Uhr via&nbsp;<a href="">@timpritlove</a></span>
+          
+        </div>
+
+        <div class="media-right is-hidden-mobile">
+          <nav class="is-mobile">
+            <div class=" is-size-7">
+              <a class="">
+                <span class="icon is-small">
+                  <i class="fa fa-sign-in"></i>
+                </span>move
+              </a>
+              <br/>
+              <a class="">
+                <span class="icon is-small">
+                  <i class="fa fa-pencil"></i>
+                </span>edit
+              </a>
+              <br/>
+              <a class="">
+                <span class="icon is-small">
+                  <i class="fa fa-trash-o"></i>
+                </span>trash
+              </a>
+            </div>
+          </nav>
+        </div>
+
+      </article>
+    </div>
+      <footer class="card-footer is-hidden-tablet">
+        <a class="card-footer-item">
+          <span class="icon is-small"><i class="fa fa-sign-in"></i></span> <span>move</span>
+        </a>
+        <a class="card-footer-item">
+          <span class="icon is-small"><i class="fa fa-pencil"></i></span> edit
+        </a>
+        <a class="card-footer-item">
+          <span class="icon is-small"><i class="fa fa-trash-o"></i></span> trash
+        </a>
+      </footer>
+  </div>
+</div>
