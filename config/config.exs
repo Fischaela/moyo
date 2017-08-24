@@ -22,6 +22,19 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :argon2_elixir,
+  t_cost: 6,
+  m_cost: 16
+
+config :guardian, Guardian,
+  allowed_algos: ["HS512", "HS384"],
+  issuer: "Moyo",
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  verify_issuer: true,
+  serializer: MoyoWeb.GuardianSerializer,
+  secret_key: "nWC8iV22eCmNZTH+I5J1jkj/ksL3fh0lbm/I5hs4JVEetgZC0IbJfeyr5TObbfVt"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

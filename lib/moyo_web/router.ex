@@ -9,16 +9,23 @@ defmodule MoyoWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :browser_session do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+    # plug Auth.Plug.SetCurrentUser
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", MoyoWeb do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser , :browser_session]
 
     get "/", PageController, :index
 
     resources "/users", UserController, only: [:new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.

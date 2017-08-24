@@ -17,3 +17,8 @@ config :moyo, Moyo.Repo,
   database: "moyo_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# reduce the number of rounds so it does not slow down the test suite
+config :argon2_elixir,
+  t_cost: 2,
+  m_cost: 12

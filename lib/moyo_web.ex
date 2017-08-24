@@ -40,6 +40,7 @@ defmodule MoyoWeb do
       import MoyoWeb.Router.Helpers
       import MoyoWeb.ErrorHelpers
       import MoyoWeb.Gettext
+      import MoyoWeb.ViewHelper
     end
   end
 
