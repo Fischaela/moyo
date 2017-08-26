@@ -1,0 +1,2 @@
+<% active_class = if (current_path(@conn) == @url), do: "is-active", else: "" %>
+<li><a href="<%= @url %>" class="<%= active_class %>"><%= @text %></a></li>

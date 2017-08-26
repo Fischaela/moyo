@@ -1,7 +1,8 @@
 <aside class="menu">
 
   <ul class="menu-list">
-    <li><a href="<%= inbox_path(@conn, :index) %>" class="is-active">Inbox</a></li>
+    <%= render("_navigation_item.html", url: inbox_path(@conn, :index), text: "Inbox", conn: @conn) %>
+    <%= render("_navigation_item.html", url: block_path(@conn, :new), text: "New Block", conn: @conn) %>
   </ul>
 
   <p class="menu-label">
