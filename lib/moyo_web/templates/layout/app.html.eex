@@ -47,17 +47,7 @@
           
           <%= if logged_in?(@conn) do %>
           <div class="column is-one-quarter">
-
-            <aside class="menu">
-              <p class="menu-label">
-                Planning
-              </p>
-              <ul class="menu-list">
-                <li><a>Inbox</a></li>
-                <li><a>LNP</a></li>
-              </ul>
-            </aside>
-
+            <%= render("menu.html", conn: @conn) %>
           </div>
           <% end %>
 

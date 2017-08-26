@@ -1,0 +1,26 @@
+<aside class="menu">
+
+  <ul class="menu-list">
+    <li><a href="<%= inbox_path(@conn, :index) %>" class="is-active">Inbox</a></li>
+  </ul>
+
+  <p class="menu-label">
+    Logbuch Netzpolitik
+  </p>
+  <ul class="menu-list">
+    <li><a>LNP041</a></li>
+    <li><a>LNP042</a></li>
+    <li><a>LNP043</a></li>
+  </ul>
+
+  <p class="menu-label">
+    Administration
+  </p>
+  <ul class="menu-list">
+    <li><a>Account</a></li>
+    <li><a>Team</a></li>
+    <li><a>RSS Feeds</a></li>
+    <li><a>Bookmarklet</a></li>
+  </ul>
+  
+</aside>
