@@ -1,0 +1,35 @@
+<%= form_for @block, @action, fn f -> %>
+  <%= if @block.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label f, :title, class: "label" %>
+    <div class="control">
+      <%= text_input f, :title, class: "input" %>
+    </div>
+    <%= error_tag f, :title %>
+  </div>
+
+  <div class="field">
+    <%= label f, :url, class: "label" %>
+    <div class="control">
+      <%= text_input f, :url, class: "input" %>
+    </div>
+    <%= error_tag f, :url %>
+  </div>
+
+  <div class="field">
+    <%= label f, :description, class: "label" %>
+    <div class="control">
+      <%= textarea f, :description, class: "textarea" %>
+    </div>
+    <%= error_tag f, :description %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Create", class: "button is-primary" %>
+  </div>
+<% end %>

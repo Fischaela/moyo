@@ -7,6 +7,7 @@ defmodule Moyo.Studio do
   alias Moyo.Repo
 
   alias Moyo.Studio.Block
+  alias Moyo.Account.User
 
   @doc """
   Returns the list of blocks.
@@ -49,7 +50,9 @@ defmodule Moyo.Studio do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_block(attrs \\ %{}) do
+  def create_block(attrs \\ %{}, %User{} = user) do
+    attrs = Map.put(attrs, "created_by_user_id", user.id)
+
     %Block{}
     |> Block.changeset(attrs)
     |> Repo.insert()

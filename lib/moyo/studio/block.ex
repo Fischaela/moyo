@@ -19,7 +19,7 @@ defmodule Moyo.Studio.Block do
   @doc false
   def changeset(%Block{} = block, attrs) do
     block
-    |> cast(attrs, [:title, :url, :description, :note, :url_meta])
-    # |> validate_required([])
+    |> cast(attrs, [:title, :url, :description, :note, :url_meta, :created_by_user_id])
+    |> validate_required([:created_by_user_id]) # todo: add db constraint
   end
 end

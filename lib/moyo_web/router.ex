@@ -25,6 +25,7 @@ defmodule MoyoWeb.Router do
     get "/", PageController, :index
 
     get "/inbox", BlockController, :index, as: :inbox
+    resources "/blocks", BlockController, only: [:new, :create]
 
     resources "/users", UserController, only: [:new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
