@@ -1,0 +1,7 @@
+<h1 class="title">Inbox</h1>
+
+<div class="columns is-multiline is-mobile">
+  <%= for block <- @blocks do %>
+    <%= render MoyoWeb.BlockView, "block.html", block: block %>
+  <% end %>
+</div>
