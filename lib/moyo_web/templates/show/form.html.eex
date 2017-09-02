@@ -1,0 +1,19 @@
+<%= form_for @show, @action, fn f -> %>
+  <%= if @show.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label f, :title, class: "label" %>
+    <div class="control">
+      <%= text_input f, :title, class: "input" %>
+    </div>
+    <%= error_tag f, :title %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Create", class: "button is-primary" %>
+  </div>
+<% end %>
