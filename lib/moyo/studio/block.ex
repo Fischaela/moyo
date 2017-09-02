@@ -1,7 +1,7 @@
 defmodule Moyo.Studio.Block do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Moyo.Studio.Block
+  alias Moyo.Studio.{Block, Show}
 
 
   schema "blocks" do
@@ -12,6 +12,8 @@ defmodule Moyo.Studio.Block do
     field :url_meta, :map
     field :created_by_user_id, :id
     field :last_edit_by_user_id, :id
+
+    belongs_to :show, Show
 
     timestamps()
   end
