@@ -20,7 +20,7 @@ defmodule MoyoWeb.BlockController do
 
   def create(conn, %{"block" => block_params}) do
     case Studio.create_block(block_params, current_user(conn)) do
-      {:ok, block} ->
+      {:ok, _block} ->
         conn
         |> put_flash(:info, "Block created successfully.")
         |> redirect(to: inbox_path(conn, :index))
