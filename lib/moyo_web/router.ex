@@ -12,7 +12,6 @@ defmodule MoyoWeb.Router do
   pipeline :browser_session do
     plug Guardian.Plug.VerifySession
     plug Guardian.Plug.LoadResource
-    # plug Auth.Plug.SetCurrentUser
   end
 
   pipeline :api do
@@ -30,9 +29,4 @@ defmodule MoyoWeb.Router do
     resources "/users", UserController, only: [:new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", MoyoWeb do
-  #   pipe_through :api
-  # end
 end
