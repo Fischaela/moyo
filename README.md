@@ -1,5 +1,9 @@
 # Moyo
 
+Toying around with Elixir/Phoenix and a collaboration idea.
+
+---
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`

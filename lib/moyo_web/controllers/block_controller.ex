@@ -8,7 +8,7 @@ defmodule MoyoWeb.BlockController do
   import MoyoWeb.Session
 
   def index(conn, _params) do
-    # only what has no associated show
+    # only what has no associated recording
     blocks = Repo.all Block
     render conn, "index.html", blocks: blocks
   end

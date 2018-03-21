@@ -1,8 +1,14 @@
 defmodule MoyoWeb.ShowController do
   use MoyoWeb, :controller
 
+  alias Moyo.Repo
   alias Moyo.Studio
   alias Moyo.Studio.Show
+
+  def index(conn, _params) do
+    shows = Repo.all Show # todo: only belonging to user
+    render conn, "index.html", shows: shows
+  end
 
   def new(conn, _params) do
     show = Studio.change_show(%Show{})
